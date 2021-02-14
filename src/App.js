@@ -23,15 +23,57 @@ import ParentComp from "./components/ParentComp";
 import RefsDemo from "./components/RefsDemo";
 import FocusInput from "./components/FocusInput";
 import FRParentInput from "./components/FRParentInput";
+import PortalDemo from "./components/PortalDemo";
+import Hero from "./components/Hero";
+import ErrorBoundary from "./components/ErrorBoundary";
+import ClickCounter from "./components/ClickCounter";
+import HoverCounter from "./components/HoverCounter";
+import ClickCounterTwo from "./components/ClickCounterTwo";
+import HoverCounterTwo from "./components/HoverCounterTwo";
+import User from "./components/User";
+import RenderPropsCounter from "./components/RenderPropsCounter";
 
 class App extends Component {
   render() {
     return (
       <div  className="App">
 
-        <FRParentInput/>
-        
+        <RenderPropsCounter>
+          {(count, incrementCount) => (
+            <ClickCounterTwo count={count} incrementCount={incrementCount} />
+          )}
+        </RenderPropsCounter>
+         
+        <RenderPropsCounter>
+          {(count, incrementCount) => (
+            <HoverCounterTwo count={count} incrementCount={incrementCount} />
+          )}
+        </RenderPropsCounter>
+       
         {/*
+        <ClickCounterTwo />
+        <HoverCounterTwo />
+        <User render={(isLoggedIn) => isLoggedIn ? 'Tolu' :  'Guest' } />
+
+        <ClickCounter name='Tolu' />
+        <HoverCounter />
+
+        <ErrorBoundary>
+          <Hero  heroName='Batman' />
+        </ErrorBoundary>
+
+        <ErrorBoundary>
+         <Hero  heroName='Superman' />
+        </ErrorBoundary>
+
+        <ErrorBoundary>
+         <Hero  heroName='Joker' />
+        </ErrorBoundary>
+
+        <PortalDemo/>
+
+        <FRParentInput/>
+
         <FocusInput/>
 
         <RefsDemo/>
