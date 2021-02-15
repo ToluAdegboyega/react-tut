@@ -32,11 +32,24 @@ import ClickCounterTwo from "./components/ClickCounterTwo";
 import HoverCounterTwo from "./components/HoverCounterTwo";
 import User from "./components/User";
 import RenderPropsCounter from "./components/RenderPropsCounter";
+import ComponentC from "./components/ComponentC";
+import { UserProvider } from "./components/userContext";
+import PostList from "./components/PostList";
+import PostForm from "./components/PostForm";
 
 class App extends Component {
   render() {
     return (
       <div  className="App">
+
+        <PostForm />
+       
+        {/*
+        <PostList />
+
+        <UserProvider value='Tolu' >
+         <ComponentC />
+        </UserProvider>
 
         <RenderPropsCounter>
           {(count, incrementCount) => (
@@ -49,8 +62,7 @@ class App extends Component {
             <HoverCounterTwo count={count} incrementCount={incrementCount} />
           )}
         </RenderPropsCounter>
-       
-        {/*
+
         <ClickCounterTwo />
         <HoverCounterTwo />
         <User render={(isLoggedIn) => isLoggedIn ? 'Tolu' :  'Guest' } />
