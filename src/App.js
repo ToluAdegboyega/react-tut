@@ -42,9 +42,11 @@ class App extends Component {
     return (
       <div  className="App">
 
-        <PostForm />
+       
        
         {/*
+        <PostForm />
+
         <PostList />
 
         <UserProvider value='Tolu' >
